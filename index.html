@@ -4,43 +4,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ['Space Mono', 'mono'],
+            },
+          },
+        },
+      };
+    </script>
     <title>1RM</title>
   </head>
   <body>
-    <div class="flex flex-col items-center justify-center h-screen bg-blue-300">
+    <div
+      class="flex flex-col items-center md:justify-center h-screen bg-blue-500">
       <div
-        class="flex flex-col bg-white rounded-2xl max-w-[360px] max-h-[660px] p-8 space-y-8">
-        <h1 class="text-3xl text-center">1 Rep Max Calculator</h1>
-        <form onsubmit="return result()" class="flex flex-col space-y-4">
-          <label for="weight" class="text-2xl text-center">Weight</label>
+        class="flex flex-col bg-white mt-4 rounded-2xl max-w-[360px] max-h-[660px] p-8 space-y-8">
+        <h1 class="text-3xl text-center font-mono">1 Rep Max Calculator</h1>
+        <form
+          onsubmit="return result()"
+          onreset="return resetText()"
+          class="flex flex-col space-y-4">
+          <label for="weight" class="text-2xl text-center font-mono"
+            >Weight</label
+          >
           <input
             type="number"
             id="weight"
             name="weight"
             required
             maxlength="3"
-            class="border" />
+            class="border border-slate-500" />
           <br />
-          <label for="reps" class="text-2xl text-center">Reps</label>
+          <label for="reps" class="text-2xl text-center font-mono">Reps</label>
           <input
             type="number"
             id="reps"
             name="reps"
             required
             maxlength="2"
-            class="border" />
+            class="border border-slate-500" />
           <br />
           <input
             type="submit"
             value="Submit"
-            class="text-xl items-center border rounded-2xl bg-blue-200 p-2 hover:bg-blue-300" /><br />
+            class="text-xl items-center border rounded-2xl bg-blue-200 p-2 hover:bg-blue-300 font-mono" /><br />
           <input
             type="reset"
-            class="text-xl border rounded-2xl bg-blue-200 p-2 hover:bg-blue-300" />
+            class="text-xl border rounded-2xl bg-blue-200 p-2 hover:bg-blue-300 font-mono" />
         </form>
-        <h3 class="text-2xl text-center">Your 1RM is:</h3>
-        <h5 id="output" class="text-4xl text-center pb-4 mb-4"></h5>
+        <h3 class="text-2xl text-center font-mono">Your 1RM is:</h3>
+        <h5 id="output" class="text-4xl text-center pb-4 mb-4 font-mono"></h5>
       </div>
     </div>
     <script src="main.js"></script>

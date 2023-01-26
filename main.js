@@ -13,3 +13,7 @@ function result() {
   document.getElementById('output').innerHTML = calculate1RM();
   return false;
 }
+
+function resetText() {
+  document.getElementById('output').innerHTML = '';
+}
